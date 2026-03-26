@@ -1,5 +1,5 @@
 @import "~bootstrap/scss/bootstrap.scss";
-@import "~highlight.js/styles/github-dark.css";
+@import "~highlight.js/styles/github.css";
 @import "includes/jumbotron.css";
 @import "includes/sticky-footer.css";
 @import "includes/award-icons.scss";
@@ -7,34 +7,10 @@
 @import "includes/utils/opacity.scss";
 @import "includes/utils/min-height.scss";
 
-// ── JJK Palette ──────────────────────────────────────────────
-$jjk-black:      #080808;
-$jjk-dark:       #0e0e0e;
-$jjk-surface:    #141414;
-$jjk-border:     #1f1f1f;
-
-$jjk-red:        #c0152a;       // cursed energy red
-$jjk-red-dim:    #7a0d1a;
-$jjk-red-glow:   rgba(192, 21, 42, 0.25);
-
-$jjk-blue:       #3ecfea;       // reverse cursed technique cyan-blue
-$jjk-blue-dim:   #1a8fa6;
-$jjk-blue-glow:  rgba(62, 207, 234, 0.2);
-
-$jjk-text:       #e8e8e8;
-$jjk-muted:      #888;
-// ─────────────────────────────────────────────────────────────
-
 html,
 body,
 .container {
   font-family: "Lato", "LatoOffline", sans-serif;
-  background-color: $jjk-black !important;
-  color: $jjk-text !important;
-}
-
-body {
-  background-color: $jjk-black !important;
 }
 
 h1,
@@ -42,149 +18,79 @@ h2 {
   font-family: "Raleway", "RalewayOffline", sans-serif;
   font-weight: 500;
   letter-spacing: 2px;
-  color: $jjk-text;
 }
 
 a {
-  color: $jjk-blue;
+  color: #337ab7;
   text-decoration: none;
-  transition: color 0.2s ease;
-
-  &:hover {
-    color: lighten($jjk-blue, 15%);
-  }
 }
 
-// ── Tables ───────────────────────────────────────────────────
 table > thead > tr > td {
+  /* Remove border line from thead of all tables */
+  /* It can overlap with other element styles */
   border-top: none !important;
 }
 
-.table {
-  color: $jjk-text;
-  border-color: $jjk-border;
-
-  thead th {
-    white-space: nowrap;
-    background-color: $jjk-surface;
-    color: $jjk-blue;
-    border-color: $jjk-border;
-    letter-spacing: 1px;
-    font-size: 12px;
-  }
-
-  tbody tr {
-    background-color: $jjk-dark;
-    border-color: $jjk-border;
-
-    &:hover {
-      background-color: $jjk-surface;
-    }
-
-    td {
-      border-color: $jjk-border;
-      color: $jjk-text;
-    }
-  }
+blockquote {
+  border-left: 4px solid $secondary;
+  padding-left: 15px;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: rgba(255, 255, 255, 0.02);
+.table thead th {
+  white-space: nowrap;
 }
 
-// ── Cards / Panels ───────────────────────────────────────────
-.card {
-  background-color: $jjk-surface !important;
-  border: 1px solid $jjk-border !important;
-  border-radius: 0 !important;
-  color: $jjk-text;
-
-  .card-header {
-    background-color: $jjk-dark;
-    border-bottom: 1px solid $jjk-border;
-    color: $jjk-blue;
-    letter-spacing: 1px;
-  }
-
-  .card-body {
-    background-color: $jjk-surface;
-  }
+.fa-spin.spinner {
+  text-align: center;
+  opacity: 0.5;
 }
 
-// ── Navbar ───────────────────────────────────────────────────
-.navbar {
-  background-color: $jjk-dark !important;
-  border-bottom: 1px solid $jjk-red !important;
-  box-shadow: 0 2px 12px $jjk-red-glow;
-
-  .navbar-brand {
-    color: $jjk-text !important;
-    letter-spacing: 2px;
-  }
-
-  .nav-link {
-    color: $jjk-muted !important;
-    transition: color 0.2s;
-
-    &:hover,
-    &.active {
-      color: $jjk-blue !important;
-    }
-  }
-
-  .navbar-toggler {
-    border-color: $jjk-red;
-  }
+.spinner-error {
+  padding-top: 20vh;
+  text-align: center;
+  opacity: 0.5;
 }
 
-// ── Jumbotron ────────────────────────────────────────────────
 .jumbotron {
   border-radius: 0;
   text-align: center;
-  background-color: $jjk-dark !important;
-  border-bottom: 1px solid $jjk-border;
-  color: $jjk-text;
 }
 
-// ── Forms ────────────────────────────────────────────────────
-.form-control {
-  background-color: $jjk-surface !important;
-  border: 1px solid $jjk-border !important;
-  color: $jjk-text !important;
-  border-radius: 0 !important;
-
-  &::placeholder {
-    color: $jjk-muted;
-  }
-
-  &:focus {
-    background-color: $jjk-surface !important;
-    border-color: $jjk-blue !important;
-    box-shadow: 0 0 0 0.15rem $jjk-blue-glow !important;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
+.form-control:focus {
+  background-color: transparent;
+  border-color: #a3d39c;
+  box-shadow: 0 0 0 0.1rem #a3d39c;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .input-filled-valid {
   background-color: transparent !important;
-  border-color: $jjk-blue !important;
-  box-shadow: 0 0 0 0.1rem $jjk-blue-glow !important;
+  border-color: #a3d39c;
+  box-shadow: 0 0 0 0.1rem #a3d39c;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
 .input-filled-invalid {
   background-color: transparent !important;
-  border-color: $jjk-red !important;
-  box-shadow: 0 0 0 0.1rem $jjk-red-glow !important;
+  border-color: #d46767;
+  box-shadow: 0 0 0 0.1rem #d46767;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-select.form-control option {
-  background-color: $jjk-surface;
-  color: $jjk-text;
+.btn-outlined.btn-theme {
+  background: none;
+  color: #545454;
+  border-color: #545454;
+  border: 3px solid;
 }
 
-// ── Buttons ──────────────────────────────────────────────────
+.btn-outlined {
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 .btn {
   letter-spacing: 1px;
   text-decoration: none;
@@ -199,181 +105,20 @@ select.form-control option {
   line-height: 20px;
   font-weight: 700;
   padding: 8px 20px;
-  transition: all 0.2s ease;
-}
-
-.btn-primary {
-  background-color: $jjk-red !important;
-  border-color: $jjk-red !important;
-  color: #fff !important;
-
-  &:hover {
-    background-color: $jjk-red-dim !important;
-    border-color: $jjk-red-dim !important;
-    box-shadow: 0 0 10px $jjk-red-glow;
-  }
-}
-
-.btn-secondary {
-  background-color: $jjk-surface !important;
-  border-color: $jjk-border !important;
-  color: $jjk-text !important;
-
-  &:hover {
-    border-color: $jjk-blue !important;
-    color: $jjk-blue !important;
-  }
-}
-
-.btn-success {
-  background-color: $jjk-blue-dim !important;
-  border-color: $jjk-blue-dim !important;
-  color: #fff !important;
-
-  &:hover {
-    background-color: $jjk-blue !important;
-    box-shadow: 0 0 10px $jjk-blue-glow;
-  }
-}
-
-.btn-danger {
-  background-color: $jjk-red !important;
-  border-color: $jjk-red !important;
-
-  &:hover {
-    background-color: darken($jjk-red, 10%) !important;
-    box-shadow: 0 0 10px $jjk-red-glow;
-  }
 }
 
 .btn-info {
-  background-color: $jjk-blue-dim !important;
-  border-color: $jjk-blue-dim !important;
-  color: #fff !important;
-
-  &:hover {
-    background-color: $jjk-blue !important;
-  }
+  background-color: #5b7290 !important;
+  border-color: #5b7290 !important;
 }
 
-.btn-outlined.btn-theme {
-  background: none;
-  color: $jjk-text;
-  border-color: $jjk-red;
-  border: 2px solid;
-
-  &:hover {
-    background-color: $jjk-red-glow;
-    color: $jjk-text;
-  }
-}
-
-.btn-outlined {
-  border-radius: 0;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-// ── Badges ───────────────────────────────────────────────────
 .badge-info {
-  background-color: $jjk-blue-dim !important;
+  background-color: #5b7290 !important;
 }
 
-.badge-success {
-  background-color: darken($jjk-blue, 10%) !important;
-}
-
-.badge-danger {
-  background-color: $jjk-red !important;
-}
-
-.badge-primary {
-  background-color: $jjk-red !important;
-}
-
-// ── Alerts ───────────────────────────────────────────────────
 .alert {
   border-radius: 0 !important;
   padding: 0.8em;
-  border-left: 3px solid;
-}
-
-.alert-success {
-  background-color: rgba($jjk-blue, 0.1) !important;
-  border-color: $jjk-blue !important;
-  color: $jjk-blue !important;
-}
-
-.alert-danger {
-  background-color: rgba($jjk-red, 0.1) !important;
-  border-color: $jjk-red !important;
-  color: lighten($jjk-red, 20%) !important;
-}
-
-.alert-info {
-  background-color: rgba($jjk-blue, 0.08) !important;
-  border-color: $jjk-blue-dim !important;
-  color: $jjk-blue !important;
-}
-
-.alert-warning {
-  background-color: rgba(200, 140, 20, 0.1) !important;
-  border-color: #c88c14 !important;
-  color: #e8a820 !important;
-}
-
-// ── Modals ───────────────────────────────────────────────────
-.modal-content {
-  -webkit-border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
-  border-radius: 0 !important;
-  background-color: $jjk-surface !important;
-  border: 1px solid $jjk-red !important;
-  color: $jjk-text;
-  box-shadow: 0 0 30px $jjk-red-glow;
-}
-
-.modal-header {
-  background-color: $jjk-dark;
-  border-bottom: 1px solid $jjk-border;
-
-  .modal-title {
-    color: $jjk-text;
-    letter-spacing: 1px;
-  }
-
-  .close,
-  .btn-close {
-    color: $jjk-muted !important;
-    filter: invert(1);
-  }
-}
-
-.modal-footer {
-  background-color: $jjk-dark;
-  border-top: 1px solid $jjk-border;
-}
-
-// ── Blockquote ───────────────────────────────────────────────
-blockquote {
-  border-left: 4px solid $jjk-red;
-  padding-left: 15px;
-  color: $jjk-muted;
-}
-
-// ── Misc utilities ───────────────────────────────────────────
-.fa-spin.spinner {
-  text-align: center;
-  opacity: 0.5;
-  color: $jjk-blue;
-}
-
-.spinner-error {
-  padding-top: 20vh;
-  text-align: center;
-  opacity: 0.5;
-  color: $jjk-red;
 }
 
 .btn-fa {
@@ -392,6 +137,12 @@ blockquote {
   cursor: help;
 }
 
+.modal-content {
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
 .fa-disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -401,106 +152,4 @@ blockquote {
   vertical-align: top;
   margin-left: -1.5em;
   font-size: 50%;
-}
-
-// ── Scrollbar ────────────────────────────────────────────────
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: $jjk-dark;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $jjk-red-dim;
-  border-radius: 0;
-
-  &:hover {
-    background: $jjk-red;
-  }
-}
-
-// ── Selection ────────────────────────────────────────────────
-::selection {
-  background: $jjk-red-glow;
-  color: $jjk-text;
-}
-
-// ── CTFd Challenge cards ─────────────────────────────────────
-.challenge-button {
-  border: 1px solid $jjk-border !important;
-  background-color: $jjk-surface !important;
-  color: $jjk-text !important;
-  transition: all 0.25s ease;
-
-  &:hover {
-    border-color: $jjk-red !important;
-    box-shadow: 0 0 12px $jjk-red-glow;
-    transform: translateY(-2px);
-  }
-
-  &.solved-challenge {
-    border-color: $jjk-blue-dim !important;
-    box-shadow: 0 0 8px $jjk-blue-glow;
-  }
-}
-
-// ── Scoreboard ───────────────────────────────────────────────
-.leaderboard-name {
-  color: $jjk-blue;
-}
-
-tr.table-warning {
-  background-color: rgba($jjk-red, 0.12) !important;
-  color: $jjk-text !important;
-}
-
-// ── Input groups ─────────────────────────────────────────────
-.input-group-text {
-  background-color: $jjk-dark !important;
-  border-color: $jjk-border !important;
-  color: $jjk-muted !important;
-}
-
-// ── Dropdowns ────────────────────────────────────────────────
-.dropdown-menu {
-  background-color: $jjk-surface;
-  border: 1px solid $jjk-border;
-  border-radius: 0;
-
-  .dropdown-item {
-    color: $jjk-text;
-    background-color: transparent;
-
-    &:hover {
-      background-color: $jjk-dark;
-      color: $jjk-blue;
-    }
-  }
-
-  .dropdown-divider {
-    border-color: $jjk-border;
-  }
-}
-
-// ── Pagination ───────────────────────────────────────────────
-.page-item {
-  .page-link {
-    background-color: $jjk-surface;
-    border-color: $jjk-border;
-    color: $jjk-text;
-
-    &:hover {
-      background-color: $jjk-dark;
-      color: $jjk-blue;
-    }
-  }
-
-  &.active .page-link {
-    background-color: $jjk-red;
-    border-color: $jjk-red;
-    color: #fff;
-  }
 }
