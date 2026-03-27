@@ -324,6 +324,7 @@ select option {
 /* ── Jumbotron ── */
 .jumbotron {
   background-color: #0a0000 !important;
+  border-bottom: 1px solid var(--jjk-red-dim) !important;
   color: var(--jjk-text) !important;
 }
  
