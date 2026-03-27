@@ -37,7 +37,6 @@ body {
 /* ── Navbar ── */
 .navbar {
   background-color: #0a0000 !important;
-  border-bottom: 2px solid var(--jjk-red) !important;
   box-shadow: 0 2px 16px var(--jjk-red-glow) !important;
 }
  
