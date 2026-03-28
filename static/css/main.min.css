@@ -326,6 +326,23 @@ select option {
   background-color: #0a0000 !important;
   border-bottom: 1px solid var(--jjk-text) !important;
   color: var(--jjk-text) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../img/background.png') center center / cover no-repeat;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.jumbotron > * {
+  position: relative;
+  z-index: 1;
 }
  
 /* ── Toasts ── */
