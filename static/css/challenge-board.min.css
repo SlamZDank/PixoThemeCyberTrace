@@ -22,6 +22,10 @@
   opacity: 0.8;
   border: none;
 }
+.solved-challenge:hover {
+  color: #fff !important;
+  transition: all 0.3s ease;
+}
 .corner-button-check {
   margin-top: -10px;
   margin-right: 25px;
