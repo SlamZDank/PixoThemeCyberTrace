@@ -17,7 +17,8 @@
   box-shadow: 3px 3px 3px grey;
 }
 .solved-challenge {
-  background-color: #009297 !important;
+  background-color: #3ecfea !important;
+  color: #000;
   opacity: 0.8;
   border: none;
 }
