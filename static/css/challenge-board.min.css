@@ -18,7 +18,7 @@
 }
 .solved-challenge {
   background-color: #3ecfea !important;
-  color: #000;
+  color: #000 !important;
   opacity: 0.8;
   border: none;
 }
