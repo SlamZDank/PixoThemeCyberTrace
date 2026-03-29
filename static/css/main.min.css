@@ -158,7 +158,7 @@ a:hover {
  
 /* ── Category header arrow ── */
 .category-header h3 {
-  color: var(--jjk-red) !important;
+  color: #fff !important;
 }
  
 /* ── Cards ── */
